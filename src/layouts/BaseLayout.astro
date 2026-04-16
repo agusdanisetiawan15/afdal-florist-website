@@ -1,0 +1,120 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppFloat from "../components/WhatsAppFloat.astro";
+import "../styles/globals.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, "https://afdalflorist.com");
+
+const {
+  title,
+  description = "Afdal Florist - Toko bunga terpercaya di Rangkasbitung, Lebak, Banten. Buket bunga, papan bunga, standing flower, bunga meja, dan rangkaian kustom untuk momen spesial Anda. Order via WhatsApp.",
+  keywords = "toko bunga rangkasbitung, florist lebak, buket bunga, papan bunga, standing flower, bunga meja, toko bunga banten, afdal florist",
+} = Astro.props;
+
+const fullTitle = title === "Home" ? "Afdal Florist - Toko Bunga Terpercaya di Rangkasbitung" : `${title} | Afdal Florist`;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Afdal Florist" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#D4A017" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/png" href="/images/LOGO-AFDAL FLORIST.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Afdal Florist" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png" />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="ID-BT" />
+    <meta name="geo.placename" content="Rangkasbitung, Lebak, Banten" />
+    <meta name="geo.position" content="-6.3626439;106.2582227" />
+    <meta name="ICBM" content="-6.3626439, 106.2582227" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{fullTitle}</title>
+
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "Afdal Florist",
+      "image": "https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png",
+      "url": "https://afdalflorist.com",
+      "telephone": "+6288905882925",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Siliwangi, RT.01/RW.02, Rangkasbitung Tim.",
+        "addressLocality": "Rangkasbitung",
+        "addressRegion": "Banten",
+        "postalCode": "42313",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.3626439,
+        "longitude": 106.2582227
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "Rangkasbitung"
+      },
+      "description": "Toko bunga terpercaya di Rangkasbitung, Lebak, Banten. Menyediakan buket bunga, papan bunga, standing flower, bunga meja, dan rangkaian kustom.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Katalog Bunga",
+        "itemListElement": [
+          { "@type": "OfferCatalog", "name": "Buket Bunga" },
+          { "@type": "OfferCatalog", "name": "Papan Bunga" },
+          { "@type": "OfferCatalog", "name": "Standing Flower" },
+          { "@type": "OfferCatalog", "name": "Bunga Meja" },
+          { "@type": "OfferCatalog", "name": "Kustomisasi" }
+        ]
+      }
+    })} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+  </body>
+</html>

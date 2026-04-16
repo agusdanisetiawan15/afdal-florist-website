@@ -1,0 +1,94 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/katalog", label: "Katalog" },
+  { href: "/#tentang-kami", label: "Tentang Kami" },
+  { href: "/kontak", label: "Kontak" },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gold-900 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/LOGO-AFDAL FLORIST.png"
+          alt="Afdal Florist"
+          class="h-10 md:h-12 w-auto"
+        />
+        <span class="text-xl md:text-2xl font-serif font-bold text-gold-400 group-hover:text-gold-300 transition-colors">
+          Afdal Florist
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "text-sm font-medium transition-colors relative py-1",
+              "hover:text-gold-400",
+              "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-400 after:transition-all hover:after:w-full",
+              currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
+                ? "text-gold-400 after:w-full"
+                : "text-gray-300",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-gray-300 hover:text-gold-400 transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
+                ? "bg-gold-900/50 text-gold-400"
+                : "text-gray-300 hover:bg-gold-900/50 hover:text-gold-400",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const openIcon = document.getElementById("menu-open-icon")!;
+  const closeIcon = document.getElementById("menu-close-icon")!;
+
+  btn.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden");
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>
