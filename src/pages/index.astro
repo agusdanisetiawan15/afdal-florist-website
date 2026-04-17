@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import { categories, getWhatsAppUrl } from "../data/products";
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <BaseLayout
@@ -90,8 +92,8 @@ import { categories, getWhatsAppUrl } from "../data/products";
           <CategoryCard
             title={cat.label}
             description={cat.description}
-            image={cat.image}
-            href={`/katalog#${cat.id}`}
+            image={`${base}${cat.image.replace(/^\//, "")}`}
+            href={`${base}katalog#${cat.id}`}
           />
         ))}
       </div>
@@ -106,7 +108,7 @@ import { categories, getWhatsAppUrl } from "../data/products";
         <div class="relative">
           <div class="rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="/images/custom-1.jpeg"
+              src={`${base}images/custom-1.jpeg`}
               alt="Rangkaian bunga kustom oleh Afdal Florist Rangkasbitung"
               class="w-full h-auto object-cover"
             />

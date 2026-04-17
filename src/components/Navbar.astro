@@ -1,11 +1,12 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/katalog", label: "Katalog" },
-  { href: "/#tentang-kami", label: "Tentang Kami" },
-  { href: "/kontak", label: "Kontak" },
+  { href: `${base}`, label: "Home" },
+  { href: `${base}katalog`, label: "Katalog" },
+  { href: `${base}#tentang-kami`, label: "Tentang Kami" },
+  { href: `${base}kontak`, label: "Kontak" },
 ];
 ---
 
@@ -13,9 +14,9 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
+      <a href={base} class="flex items-center gap-3 group">
         <img
-          src="/images/LOGO-AFDAL FLORIST.png"
+          src={`${base}images/LOGO-AFDAL FLORIST.png`}
           alt="Afdal Florist"
           class="h-10 md:h-12 w-auto"
         />

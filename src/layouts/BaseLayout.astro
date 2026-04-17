@@ -10,7 +10,10 @@ interface Props {
   keywords?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, "https://afdalflorist.com");
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+const siteURL = Astro.site?.href ?? "https://agusdanisetiawan15.github.io/afdal-florist-website/";
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImage = new URL(`${base}images/LOGO-AFDAL FLORIST.png`, siteURL).href;
 
 const {
   title,
@@ -32,14 +35,14 @@ const fullTitle = title === "Home" ? "Afdal Florist - Toko Bunga Terpercaya di R
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#D4A017" />
     <link rel="canonical" href={canonicalURL.href} />
-    <link rel="icon" type="image/png" href="/images/LOGO-AFDAL FLORIST.png" />
+    <link rel="icon" type="image/png" href={`${base}images/LOGO-AFDAL FLORIST.png`} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:site_name" content="Afdal Florist" />
 
@@ -47,7 +50,7 @@ const fullTitle = title === "Home" ? "Afdal Florist - Toko Bunga Terpercaya di R
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="ID-BT" />
@@ -68,8 +71,8 @@ const fullTitle = title === "Home" ? "Afdal Florist - Toko Bunga Terpercaya di R
       "@context": "https://schema.org",
       "@type": "Florist",
       "name": "Afdal Florist",
-      "image": "https://afdalflorist.com/images/LOGO-AFDAL FLORIST.png",
-      "url": "https://afdalflorist.com",
+      "image": ogImage,
+      "url": siteURL,
       "telephone": "+6288905882925",
       "address": {
         "@type": "PostalAddress",

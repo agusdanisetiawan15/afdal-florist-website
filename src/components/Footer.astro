@@ -1,5 +1,7 @@
 ---
 import { STORE_INFO, getWhatsAppUrl } from "../data/products";
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <footer class="bg-gray-900 text-gray-300">
@@ -8,7 +10,7 @@ import { STORE_INFO, getWhatsAppUrl } from "../data/products";
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="/images/LOGO-AFDAL FLORIST.png" alt="Afdal Florist" class="h-10 w-auto" />
+          <img src={`${base}images/LOGO-AFDAL FLORIST.png`} alt="Afdal Florist" class="h-10 w-auto" />
           <span class="text-xl font-serif font-bold text-gold-400">Afdal Florist</span>
         </div>
         <p class="text-sm leading-relaxed text-gray-400">
@@ -21,10 +23,10 @@ import { STORE_INFO, getWhatsAppUrl } from "../data/products";
       <div>
         <h3 class="text-gold-400 font-semibold mb-4">Navigasi</h3>
         <ul class="space-y-2">
-          <li><a href="/" class="text-sm hover:text-gold-400 transition-colors">Home</a></li>
-          <li><a href="/katalog" class="text-sm hover:text-gold-400 transition-colors">Katalog</a></li>
-          <li><a href="/#tentang-kami" class="text-sm hover:text-gold-400 transition-colors">Tentang Kami</a></li>
-          <li><a href="/kontak" class="text-sm hover:text-gold-400 transition-colors">Kontak</a></li>
+          <li><a href={base} class="text-sm hover:text-gold-400 transition-colors">Home</a></li>
+          <li><a href={`${base}katalog`} class="text-sm hover:text-gold-400 transition-colors">Katalog</a></li>
+          <li><a href={`${base}#tentang-kami`} class="text-sm hover:text-gold-400 transition-colors">Tentang Kami</a></li>
+          <li><a href={`${base}kontak`} class="text-sm hover:text-gold-400 transition-colors">Kontak</a></li>
         </ul>
       </div>
 
