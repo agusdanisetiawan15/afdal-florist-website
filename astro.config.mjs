@@ -3,6 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://afdal-florist-website.pages.dev",
+  site: "https://afdalflorist.id",
   integrations: [tailwind(), sitemap()],
 });
