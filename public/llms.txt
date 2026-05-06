@@ -1,0 +1,34 @@
+# Afdal Florist
+
+> Toko bunga terpercaya di Rangkasbitung, Kabupaten Lebak, Banten. Menyediakan buket bunga, papan bunga, standing flower, bunga meja, dan rangkaian kustom untuk berbagai momen spesial. Order langsung via WhatsApp.
+
+## Tentang Afdal Florist
+
+Afdal Florist adalah toko bunga lokal yang berlokasi di Jl. Siliwangi, RT.01/RW.02, Rangkasbitung Tim., Kec. Rangkasbitung, Kabupaten Lebak, Banten 42313. Kami melayani area Rangkasbitung dan sekitarnya dengan rangkaian bunga segar, harga terjangkau, dan pengerjaan cepat.
+
+- **Lokasi**: Rangkasbitung, Lebak, Banten, Indonesia
+- **WhatsApp**: 0889-0588-2925
+- **Jam Operasional**: Senin - Sabtu, 08.00 - 17.00 WIB
+- **Metode Pemesanan**: WhatsApp (chat langsung)
+
+## Kategori Produk
+
+- **Buket Bunga**: Rangkaian buket untuk hadiah ulang tahun, wisuda, anniversary, valentine
+- **Papan Bunga**: Papan ucapan selamat (pernikahan, grand opening) dan papan duka cita
+- **Standing Flower**: Standing flower elegan untuk wisuda, pernikahan, grand opening
+- **Bunga Meja**: Rangkaian bunga meja untuk dekorasi kantor, hotel, restoran, acara
+- **Kustomisasi**: Rangkaian bunga sesuai keinginan dan budget pelanggan
+
+## Halaman Utama
+
+- [Beranda](https://afdalflorist.id/): Homepage dengan hero section, kategori produk, dan informasi singkat tentang toko
+- [Katalog Produk](https://afdalflorist.id/katalog): Daftar lengkap produk yang tersedia, dikelompokkan per kategori
+- [Kontak](https://afdalflorist.id/kontak): Informasi kontak, jam buka, dan peta lokasi toko
+
+## Sitemap
+
+- [Sitemap XML](https://afdalflorist.id/sitemap-index.xml)
+
+## Cara Pemesanan
+
+Pelanggan dapat memesan langsung via WhatsApp ke nomor 0889-0588-2925. Setiap produk di halaman katalog memiliki tombol "Pesan via WhatsApp" yang otomatis mengisi pesan dengan nama produk.
