@@ -32,6 +32,7 @@ const imageSrc = `${base}${product.image.replace(/^\//, "")}`;
       href={getWhatsAppUrl(product.name)}
       target="_blank"
       rel="noopener"
+      onclick={`trackWhatsAppClick('product_card', ${JSON.stringify(product.name)})`}
       class="mt-auto inline-flex items-center justify-center w-full px-4 py-2.5 bg-[#25D366] text-white text-sm font-semibold rounded-lg hover:bg-[#20bd5a] transition-colors"
     >
       <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">

@@ -111,6 +111,24 @@ const fullTitle = title === "Home" ? "Afdal Florist - Toko Bunga Terpercaya di R
         ]
       }
     })} />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JN2GWSC55"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2JN2GWSC55');
+
+      // Helper untuk tracking klik WhatsApp
+      window.trackWhatsAppClick = function(source, productName) {
+        gtag('event', 'whatsapp_click', {
+          source: source || 'unknown',
+          product_name: productName || 'general',
+          page_path: window.location.pathname,
+        });
+      };
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Navbar />

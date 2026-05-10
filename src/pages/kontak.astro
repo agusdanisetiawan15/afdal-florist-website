@@ -70,6 +70,7 @@ import { STORE_INFO, getWhatsAppUrl } from "../data/products";
                   href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener"
+                  onclick="trackWhatsAppClick('kontak_info_card')"
                   class="inline-flex items-center text-sm text-green-600 hover:text-green-700 mt-2 font-medium"
                 >
                   Kirim Pesan
@@ -100,6 +101,7 @@ import { STORE_INFO, getWhatsAppUrl } from "../data/products";
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener"
+            onclick="trackWhatsAppClick('kontak_cta_button')"
             class="mt-8 inline-flex items-center justify-center w-full px-6 py-3.5 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20bd5a] transition-colors shadow-lg"
           >
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
